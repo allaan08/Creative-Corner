@@ -41,6 +41,10 @@ class _CommentsScreenState extends State<CommentsScreen> {
               .collection('posts')
               .doc(widget.snap['postId'])
               .collection('comments')
+              .orderBy(
+                'datePublished',
+                descending: true,
+              )
               .snapshots(),
           builder: (context, snapshot) {
             if (snapshot.connectionState == ConnectionState.waiting) {
@@ -49,7 +53,9 @@ class _CommentsScreenState extends State<CommentsScreen> {
               );
             }
             return ListView.builder(
-              itemBuilder: (context, index) => CommentCard(),
+              itemCount: (snapshot.data! as dynamic).docs.length,
+              itemBuilder: (context, index) => CommentCard(
+                  snap: (snapshot.data! as dynamic).docs[index].data()),
             );
           }),
       bottomNavigationBar: SafeArea(
@@ -88,6 +94,9 @@ class _CommentsScreenState extends State<CommentsScreen> {
                     user.username,
                     user.photoUrl,
                   );
+                  setState(() {
+                    _commentController.text = "";
+                  });
                 },
                 child: Container(
                   padding: const EdgeInsets.symmetric(
