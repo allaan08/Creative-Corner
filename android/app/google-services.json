@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "641305226397",
+    "project_id": "project-creative-43dcb",
+    "storage_bucket": "project-creative-43dcb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:641305226397:android:7afea5fcde3ceb5b757874",
+        "android_client_info": {
+          "package_name": "com.example.creative_corner"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "641305226397-ncpm973u3u13268hidmc1u9gi3ci0fd6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAfqvt4EcZTac0tv4DW_zzwrHDdhs_3dfU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "641305226397-ncpm973u3u13268hidmc1u9gi3ci0fd6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
