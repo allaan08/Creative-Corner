@@ -29,6 +29,11 @@ class AuthMethods {
   }) async {
     String res = "Some error occured";
     try {
+      if (!email.contains(RegExp("[a-zA-Z]+@+[a-zA-Z]+.ajce.in"))) {
+        res = "You are not from AJCE";
+        return res;
+      }
+
       if (email.isNotEmpty ||
               password.isNotEmpty ||
               username.isNotEmpty ||
@@ -57,6 +62,9 @@ class AuthMethods {
             .collection('users')
             .doc(cred.user!.uid)
             .set(user.toJson());
+
+        var snap =
+            await _firestore.collection('users').doc(cred.user!.uid).get();
 
         // await _firestore.collection('users').add({
         // 'username': username,

@@ -30,8 +30,6 @@ class _ResponsiveLayoutState extends State<ResponsiveLayout> {
     await _userProvider.refreshUser();
   }
 
-
-
   @override
   Widget build(BuildContext context) {
     return LayoutBuilder(
