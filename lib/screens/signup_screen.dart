@@ -84,148 +84,151 @@ class _SignupScreenState extends State<SignupScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: Container(
-          padding: const EdgeInsets.symmetric(horizontal: 32),
-          width: double.infinity,
-          child:
-              Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
-            Flexible(child: Container(), flex: 2),
-            //image
-            SvgPicture.asset(
-              'assets/creative.svg',
-              color: primaryColor,
-              height: 100,
-            ),
-
-            //email
-            const SizedBox(
-              height: 25,
-            ),
-            //circular widget to accept and show our accepted file
-            Stack(
-              children: [
-                _image != null
-                    ? CircleAvatar(
-                        radius: 50,
-                        backgroundImage: MemoryImage(_image!),
-                      )
-                    : const CircleAvatar(
-                        radius: 50,
-                        backgroundImage: NetworkImage(
-                            'https://thumbs.dreamstime.com/b/default-profile-picture-avatar-photo-placeholder-vector-illustration-default-profile-picture-avatar-photo-placeholder-vector-189495158.jpg'),
-                      ),
-                Positioned(
-                  bottom: -10,
-                  left: 65,
-                  child: IconButton(
-                    onPressed: selectImage,
-                    icon: const Icon(
-                      Icons.add_a_photo,
-                      color: Colors.red,
-                    ),
+        child: SingleChildScrollView(
+          child: Container(
+            padding: const EdgeInsets.symmetric(horizontal: 32),
+            width: double.infinity,
+            child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  //Flexible(child: Container(), flex: 2),
+                  //image
+                  SvgPicture.asset(
+                    'assets/creative.svg',
+                    color: primaryColor,
+                    height: 100,
                   ),
-                ),
-              ],
-            ),
-            const SizedBox(
-              height: 20,
-            ),
 
-            TextFieldInput(
-              hintText: 'Enter your username.',
-              textInputType: TextInputType.text,
-              textEditingController: _usernameController,
-            ),
-            const SizedBox(
-              height: 20,
-            ),
-
-            TextFieldInput(
-              hintText: 'Enter your Email',
-              textInputType: TextInputType.emailAddress,
-              textEditingController: _emailController,
-            ),
-            const SizedBox(
-              height: 20,
-            ),
-            //pass
-            TextFieldInput(
-              hintText: 'Enter your Password',
-              textInputType: TextInputType.text,
-              textEditingController: _passwordController,
-              isPass: true,
-            ),
-
-            const SizedBox(
-              height: 20,
-            ),
-            TextFieldInput(
-              hintText: 'Enter your bio.',
-              textInputType: TextInputType.text,
-              textEditingController: _bioController,
-            ),
-            const SizedBox(
-              height: 20,
-            ),
-
-            //button
-            InkWell(
-              onTap: signUpUser,
-              child: Container(
-                child: _isLoading
-                    ? const Center(
-                        child: CircularProgressIndicator(
-                          color: primaryColor,
+                  //email
+                  const SizedBox(
+                    height: 25,
+                  ),
+                  //circular widget to accept and show our accepted file
+                  Stack(
+                    children: [
+                      _image != null
+                          ? CircleAvatar(
+                              radius: 50,
+                              backgroundImage: MemoryImage(_image!),
+                            )
+                          : const CircleAvatar(
+                              radius: 50,
+                              backgroundImage: NetworkImage(
+                                  'https://thumbs.dreamstime.com/b/default-profile-picture-avatar-photo-placeholder-vector-illustration-default-profile-picture-avatar-photo-placeholder-vector-189495158.jpg'),
+                            ),
+                      Positioned(
+                        bottom: -10,
+                        left: 65,
+                        child: IconButton(
+                          onPressed: selectImage,
+                          icon: const Icon(
+                            Icons.add_a_photo,
+                            color: Colors.red,
+                          ),
                         ),
-                      )
-                    : const Text('Sign Up'),
-                width: double.infinity,
-                alignment: Alignment.center,
-                padding: const EdgeInsets.symmetric(vertical: 12),
-                decoration: const ShapeDecoration(
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(4),
                       ),
-                    ),
-                    color: blueColor),
-              ),
-            ),
-            const SizedBox(
-              height: 12,
-            ),
-            Flexible(child: Container(), flex: 2),
+                    ],
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
 
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Container(
-                  padding: const EdgeInsets.symmetric(
-                    vertical: 8,
+                  TextFieldInput(
+                    hintText: 'Enter your username.',
+                    textInputType: TextInputType.text,
+                    textEditingController: _usernameController,
                   ),
-                  child: const Text(
-                    "Already have an account? ",
+                  const SizedBox(
+                    height: 20,
                   ),
-                ),
-                GestureDetector(
-                  onTap: navigateToLogin,
-                  child: Container(
-                    padding: const EdgeInsets.symmetric(
-                      vertical: 8,
+
+                  TextFieldInput(
+                    hintText: 'Enter your Email',
+                    textInputType: TextInputType.emailAddress,
+                    textEditingController: _emailController,
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  //pass
+                  TextFieldInput(
+                    hintText: 'Enter your Password',
+                    textInputType: TextInputType.text,
+                    textEditingController: _passwordController,
+                    isPass: true,
+                  ),
+
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  TextFieldInput(
+                    hintText: 'Enter your bio.',
+                    textInputType: TextInputType.text,
+                    textEditingController: _bioController,
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+
+                  //button
+                  InkWell(
+                    onTap: signUpUser,
+                    child: Container(
+                      child: _isLoading
+                          ? const Center(
+                              child: CircularProgressIndicator(
+                                color: primaryColor,
+                              ),
+                            )
+                          : const Text('Sign Up'),
+                      width: double.infinity,
+                      alignment: Alignment.center,
+                      padding: const EdgeInsets.symmetric(vertical: 12),
+                      decoration: const ShapeDecoration(
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.all(
+                              Radius.circular(4),
+                            ),
+                          ),
+                          color: blueColor),
                     ),
-                    child: const Text(
-                      "Login",
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
+                  ),
+                  const SizedBox(
+                    height: 12,
+                  ),
+                  //Flexible(child: Container(), flex: 2),
+
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Container(
+                        padding: const EdgeInsets.symmetric(
+                          vertical: 8,
+                        ),
+                        child: const Text(
+                          "Already have an account? ",
+                        ),
                       ),
-                    ),
+                      GestureDetector(
+                        onTap: navigateToLogin,
+                        child: Container(
+                          padding: const EdgeInsets.symmetric(
+                            vertical: 8,
+                          ),
+                          child: const Text(
+                            "Login",
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
-                ),
-              ],
-            ),
 
-            //forgot
-          ]),
+                  //forgot
+                ]),
+          ),
         ),
       ),
     );
