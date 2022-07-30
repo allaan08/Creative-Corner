@@ -68,17 +68,8 @@ class _MobileScreenLayoutState extends State<MobileScreenLayout> {
               backgroundColor: primaryColor),
           BottomNavigationBarItem(
               icon: Icon(
-                Icons.favorite,
-                color: _page == 2
-                    ? Color.fromARGB(255, 78, 76, 78)
-                    : secondaryColor,
-              ),
-              label: '',
-              backgroundColor: primaryColor),
-          BottomNavigationBarItem(
-              icon: Icon(
                 Icons.person,
-                color: _page == 3
+                color: _page == 2
                     ? Color.fromARGB(255, 78, 76, 78)
                     : secondaryColor,
               ),

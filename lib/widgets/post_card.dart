@@ -139,7 +139,7 @@ class _PostCardState extends State<PostCard> {
               alignment: Alignment.center,
               children: [
                 Container(
-                  color: Color.fromARGB(255, 27, 1, 56),
+                  color: Color.fromARGB(255, 2, 2, 2),
                   height: MediaQuery.of(context).size.height * 0.5,
                   width: MediaQuery.of(context).size.width * 0.95,
                   child: Image.network(

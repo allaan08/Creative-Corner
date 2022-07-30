@@ -13,7 +13,7 @@ class FeedScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: mobileBackgroundColor,
-        centerTitle: false,
+        centerTitle: true,
         title: SvgPicture.asset(
           'assets/creative.svg',
           color: primaryColor,
