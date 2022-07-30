@@ -19,16 +19,14 @@ class FeedScreen extends StatelessWidget {
           color: primaryColor,
           height: 55,
         ),
-        actions: [
+        /*actions: [
           IconButton(
             onPressed: () {
               FirebaseAuth.instance.signOut();
             },
-            icon: Icon(
-              Icons.settings_outlined,
-            ),
+            icon: Icon(Icons.exit_to_app_outlined),
           ),
-        ],
+        ],*/
       ),
       body: StreamBuilder(
         stream: FirebaseFirestore.instance

@@ -1,11 +1,13 @@
 import 'package:creative_corner/screens/add_post_screen.dart';
 import 'package:creative_corner/screens/feed_screen.dart';
+import 'package:creative_corner/screens/profile_screen.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 const webScreenSize = 600;
-const homeScreenItems = [
-  FeedScreen(),
-  AddPostScreen(),
-  Text('notifs'),
-  Text('profile'),
+List<Widget> homeScreenItems = [
+  const FeedScreen(),
+  const AddPostScreen(),
+  const Text('notifs'),
+  ProfileScreen(uid: FirebaseAuth.instance.currentUser!.uid),
 ];
